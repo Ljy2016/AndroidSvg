@@ -99,7 +99,8 @@ public class SvgView extends View {
             for (GlyphData glyphData : glyphDataList) {
                 glyphData.paint.setAntiAlias(true);
                 canvas.drawPath(glyphData.path, glyphData.paint);
-                canvas.drawPath(glyphData.path, glyphData.markPaint);
+                //痕迹
+                // canvas.drawPath(glyphData.path, glyphData.markPaint);
             }
         }
     }
@@ -199,9 +200,27 @@ public class SvgView extends View {
             glyphData.fillColor = fillColors.get(i);
             glyphData.path = pathList.get(i);
             glyphData.paint.setStyle(Paint.Style.STROKE);
+            if (i < 72) {
+                glyphData.fillColor = Color.parseColor("#FF83FA");
+            }else if(i<75){
+                glyphData.fillColor = Color.parseColor("#000000");
+            }else if(i<77){
+                glyphData.fillColor = Color.parseColor("#FF83FA");
+            }else if(i<78){
+                glyphData.fillColor = Color.parseColor("#000000");
+            }else if(i<86){
+                glyphData.fillColor = Color.parseColor("#FF83FA");
+            }else if(i<92){
+                glyphData.fillColor = Color.parseColor("#000000");
+            }else {
+                glyphData.fillColor = Color.parseColor("#FF83FA");
+            }
+
             glyphData.paint.setColor(glyphData.strokeColor);
+
             glyphDataList.add(glyphData);
         }
+        Log.e("TAG", "transform: "+pathList.size());
     }
 
     private static class GlyphData {
