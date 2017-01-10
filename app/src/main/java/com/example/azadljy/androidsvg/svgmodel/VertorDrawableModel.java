@@ -4,7 +4,7 @@ import android.graphics.Matrix;
 import android.graphics.Path;
 import android.graphics.PathMeasure;
 
-import com.example.azadljy.androidsvg.utils.PathParser1;
+import com.example.azadljy.androidsvg.utils.PathParser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,25 +15,33 @@ import java.util.List;
  */
 
 public class VertorDrawableModel {
-
+    //解析xml得到的path的原始数据
     private List<String> pathData;
+    //根据view的大小将pathData缩放转换后的适合当前view尺寸的path集合
     private List<Path> pathList;
+    //svg数据的所参照的宽高
     private float viewportHeight;
     private float viewportWidth;
+    //path本体颜色
     private List<Integer> strokeColors;
+    //path填充颜色
     private List<Integer> fillColors;
+    //path的长度
     private List<Float> pathLengths;
 
     public VertorDrawableModel() {
         pathList = new ArrayList<>();
         pathLengths = new ArrayList<>();
+        strokeColors = new ArrayList<>();
+        fillColors = new ArrayList<>();
     }
 
+    //根据缩放矩阵将pathData转换为适合的path
     public void transformPaths(Matrix scaleMatrix) {
         if (pathData != null && pathData.size() != 0) {
             for (String s : pathData) {
                 float length = 0;
-                Path path = PathParser1.createPathFromPathData(s);
+                Path path = PathParser.createPathFromPathData(s);
                 if (path != null) {
                     path.transform(scaleMatrix);
                     PathMeasure measure = new PathMeasure(path, true);

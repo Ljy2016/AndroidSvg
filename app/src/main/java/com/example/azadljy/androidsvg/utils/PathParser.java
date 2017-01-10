@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 // This class is a duplicate from the PathParser.java of frameworks/base, with slight
 // update on incompatible API like copyOfRange().
-public class PathParser1 {
+public class PathParser {
     private static final String LOGTAG = "PathParser";
 
     // Copy from Arrays.copyOfRange() which is only available from API level 9.
@@ -102,7 +102,7 @@ public class PathParser1 {
         if (source == null) {
             return null;
         }
-        PathDataNode[] copy = new PathParser1.PathDataNode[source.length];
+        PathDataNode[] copy = new PathParser.PathDataNode[source.length];
         for (int i = 0; i < source.length; i++) {
             copy[i] = new PathDataNode(source[i]);
         }
