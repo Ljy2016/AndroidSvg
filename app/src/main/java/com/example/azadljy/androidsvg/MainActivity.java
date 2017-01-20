@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         svgView1 = (SvgView) findViewById(R.id.svg);
         prease = new VectorDrawablePrease(this);
-        inputStream = getResources().openRawResource(R.raw.ic_abu);
+        inputStream = getResources().openRawResource(R.raw.ic_paojie);
     }
 
     public void go1(View view) {

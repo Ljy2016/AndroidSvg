@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SvgView extends View {
+
     private List<Path> pathList = null;
     private boolean isHavePathData;
     private List<Float> pathLength;
@@ -173,21 +174,21 @@ public class SvgView extends View {
             glyphData.fillColor = fillColors.get(i);
             glyphData.path = pathList.get(i);
             glyphData.paint.setStyle(Paint.Style.STROKE);
-            if (i < 72) {
-                glyphData.fillColor = Color.parseColor("#FF83FA");
-            } else if (i < 75) {
-                glyphData.fillColor = Color.parseColor("#000000");
-            } else if (i < 77) {
-                glyphData.fillColor = Color.parseColor("#FF83FA");
-            } else if (i < 78) {
-                glyphData.fillColor = Color.parseColor("#000000");
-            } else if (i < 86) {
-                glyphData.fillColor = Color.parseColor("#FF83FA");
-            } else if (i < 92) {
-                glyphData.fillColor = Color.parseColor("#000000");
-            } else {
-                glyphData.fillColor = Color.parseColor("#FF83FA");
-            }
+//            if (i < 72) {
+//                glyphData.fillColor = Color.parseColor("#FF83FA");
+//            } else if (i < 75) {
+//                glyphData.fillColor = Color.parseColor("#000000");
+//            } else if (i < 77) {
+//                glyphData.fillColor = Color.parseColor("#FF83FA");
+//            } else if (i < 78) {
+//                glyphData.fillColor = Color.parseColor("#000000");
+//            } else if (i < 86) {
+//                glyphData.fillColor = Color.parseColor("#FF83FA");
+//            } else if (i < 92) {
+//                glyphData.fillColor = Color.parseColor("#000000");
+//            } else {
+//                glyphData.fillColor = Color.parseColor("#FF83FA");
+//            }
             glyphData.paint.setColor(glyphData.strokeColor);
             glyphDataList.add(glyphData);
         }
